@@ -1,0 +1,22 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Mahgald/capability-configserver-repository.git
+  application:
+    name: microservices-config-server
+
+server:
+  port: 8888
+  
+info:
+  name: "@project.artifactId@"
+  version: "@project.version@"
+  description: "@project.description@"
+  running-profile: "${spring.profiles.active}"
