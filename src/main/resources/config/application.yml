@@ -4,22 +4,9 @@ info:
   description: "@project.description@"
   running-profile: "${spring.profiles.active}"
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URL:http://user:password@localhost:5000}/eureka/
-  instance:
-    instance-id: ${DOMAIN_NAME}
-    hostname:  ${DOMAIN_NAME}
-    nonSecurePort: 80
-  password: ${USER_PASSWORD:password}
-
 spring:
   cloud:
     config:
       server:
         git:
           uri: ${CONFIG_REPO}
-security:
-  user:
-    password: ${eureka.password}  
